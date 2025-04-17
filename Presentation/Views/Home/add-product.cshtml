@@ -1,0 +1,192 @@
+@{
+  Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Product - E-Commerce Admin</title>
+  <link rel="stylesheet" href="~/css/dashboardstyles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>Admin Panel</h2>
+        <button id="toggleMenu" class="toggle-menu"><i class="fas fa-bars"></i></button>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+          <li class="active"><a href="add-product.html"><i class="fas fa-plus-circle"></i> Add Product</a></li>
+          <li><a href="#"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+          <li><a href="#"><i class="fas fa-users"></i> Customers</a></li>
+          <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+          <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+          <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="main-header">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search...">
+        </div>
+        <div class="user-menu">
+          <div class="notifications">
+            <i class="fas fa-bell"></i>
+            <span class="badge">3</span>
+          </div>
+          <div class="messages">
+            <i class="fas fa-envelope"></i>
+            <span class="badge">5</span>
+          </div>
+          <div class="admin-profile">
+            <img src="https://via.placeholder.com/40" alt="Admin" class="admin-avatar">
+            <span>Admin User</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <div class="product-form-container">
+        <div class="page-header">
+          <div class="page-title">
+            <h1>Add New Product</h1>
+            <p>Add a new product to your store</p>
+          </div>
+          <div class="page-actions">
+            <button type="button" class="btn secondary-btn" id="cancel-product"><i class="fas fa-times"></i> Cancel</button>
+            <button type="button" class="btn primary-btn" id="save-product"><i class="fas fa-save"></i> Save Product</button>
+          </div>
+        </div>
+
+        <form id="product-form" class="product-form">
+          <div class="form-grid">
+            <div class="form-main">
+              <div class="form-card">
+                <div class="card-header">
+                  <h3>Basic Information</h3>
+                </div>
+                <div class="card-content">
+                  <div class="form-group">
+                    <label for="product-name">Product Name <span class="required">*</span></label>
+                    <input type="text" id="product-name" name="product-name" required>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="product-category">Category <span class="required">*</span></label>
+                      <select id="product-category" name="product-category" required>
+                        <option value="">Select Category</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Home">Home & Kitchen</option>
+                        <option value="Sports">Sports</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="product-price">Price ($) <span class="required">*</span></label>
+                      <input type="number" id="product-price" name="product-price" min="0.01" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="product-discount">Discount (%) <span class="optional">(optional)</span></label>
+                      <input type="number" id="product-discount" name="product-discount" min="0" max="100">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="product-stock">Stock Quantity <span class="required">*</span></label>
+                      <input type="number" id="product-stock" name="product-stock" min="0" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="product-status">Status <span class="required">*</span></label>
+                      <select id="product-status" name="product-status" required>
+                        <option value="In Stock">In Stock</option>
+                        <option value="Low Stock">Low Stock</option>
+                        <option value="Out of Stock">Out of Stock</option>
+                        <option value="Draft">Draft</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="product-description">Product Description <span class="required">*</span></label>
+                    <textarea id="product-description" name="product-description" rows="6" required></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-sidebar">
+              <div class="form-card">
+                <div class="card-header">
+                  <h3>Product Image</h3>
+                </div>
+                <div class="card-content">
+                  <div class="product-image-upload">
+                    <div class="image-preview" id="image-preview">
+                      <i class="fas fa-image"></i>
+                      <p>No image uploaded</p>
+                    </div>
+                    <div class="upload-actions">
+                      <label for="product-image" class="btn secondary-btn">
+                        <i class="fas fa-upload"></i> Upload Image
+                      </label>
+                      <input type="file" id="product-image" name="product-image" accept="image/*" hidden>
+                      <button type="button" class="btn danger-btn" id="remove-image" disabled>
+                        <i class="fas fa-trash"></i> Remove
+                      </button>
+                    </div>
+                    <div class="image-help">
+                      <p>Recommended size: 800 x 800px</p>
+                      <p>Max file size: 5MB</p>
+                      <p>Formats: JPG, PNG</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn secondary-btn" id="save-draft">Save as Draft</button>
+            <button type="submit" class="btn primary-btn">Save and Publish</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Product Saved</h3>
+          <button class="close-modal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+          <div class="success-message">
+            <i class="fas fa-check-circle"></i>
+            <p>Your product has been successfully saved!</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="products.html" class="btn secondary-btn">View All Products</a>
+          <a href="add-product.html" class="btn primary-btn">Add Another Product</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="~/js/dashscript.js"></script>
+
+  <script type="module" src="~/js/add-product.js"></script>
+</body>
+</html>

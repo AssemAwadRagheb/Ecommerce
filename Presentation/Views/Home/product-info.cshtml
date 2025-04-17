@@ -1,0 +1,145 @@
+@{
+  Layout = "_userLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartWatch Pro X - Product Page</title>
+    <link rel="stylesheet" href="~/css/product-info-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+
+  <body>
+
+
+    <!-- Product Section -->
+    <main class="container">
+      <div class="product-wrapper">
+        <!-- Product Images -->
+        <div class="product-images">
+          <img id="main-product-image"
+            src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.0.3"
+            alt="SmartWatch Pro X" class="main-image">
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-details">
+          <div class="product-category">Wearable Technology</div>
+          <h1 class="product-title">SmartWatch Pro X</h1>
+
+          <div class="product-rating">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="reviews-count">(42 Reviews)</span>
+          </div>
+
+          <div class="product-price">
+            <span class="current-price">$179.99</span>
+            <span class="original-price">$299.99</span>
+            <span class="discount-badge">40% OFF</span>
+          </div>
+
+          <div class="product-description">
+            <h3>Description</h3>
+            <p>Experience the future on your wrist with the SmartWatch Pro X. This versatile smartwatch features heart
+              rate monitoring, GPS tracking, water resistance up to 50m, and a stunning AMOLED display that stays
+              visible even in bright sunlight. Stay connected with notifications, track your workouts, and monitor your
+              health - all with a battery that lasts up to 7 days on a single charge.</p>
+          </div>
+
+
+          <div class="product-quantity">
+            <h3>Quantity</h3>
+            <div class="quantity-selector">
+              <button class="quantity-btn decrease">-</button>
+              <span class="quantity">1</span>
+              <button class="quantity-btn increase">+</button>
+            </div>
+          </div>
+
+          <div class="product-actions">
+            <button class="btn add-to-cart-btn">Add to Cart</button>
+            <button class="btn buy-now-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Features -->
+      <div class="product-features">
+        <h2 class="section-title">Features</h2>
+        <div class="features-card">
+          <ul class="features-list">
+            <li><i class="fas fa-check-circle"></i> AMOLED Display</li>
+            <li><i class="fas fa-check-circle"></i> Heart Rate Monitor</li>
+            <li><i class="fas fa-check-circle"></i> GPS Tracking</li>
+            <li><i class="fas fa-check-circle"></i> 7-day Battery Life</li>
+            <li><i class="fas fa-check-circle"></i> Water Resistant (50m)</li>
+            <li><i class="fas fa-check-circle"></i> Fitness Tracking</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Related Products -->
+      <div class="related-products">
+        <h2 class="section-title">You May Also Like</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image"></div>
+            <div class="product-info">
+              <h3>Related Product 1</h3>
+              <div class="product-card-footer">
+                <span class="price">$149.99</span>
+                <button class="cart-icon-btn"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image"></div>
+            <div class="product-info">
+              <h3>Related Product 2</h3>
+              <div class="product-card-footer">
+                <span class="price">$149.99</span>
+                <button class="cart-icon-btn"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image"></div>
+            <div class="product-info">
+              <h3>Related Product 3</h3>
+              <div class="product-card-footer">
+                <span class="price">$149.99</span>
+                <button class="cart-icon-btn"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image"></div>
+            <div class="product-info">
+              <h3>Related Product 4</h3>
+              <div class="product-card-footer">
+                <span class="price">$149.99</span>
+                <button class="cart-icon-btn"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+
+    <div id="notification" class="notification">Product added to cart!</div>
+
+    <script src="~/js/prodcut-info-script.js"></script>
+  </body>
+
+</html>
